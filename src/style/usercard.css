@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+}
+
+h1 {
+    text-align: center;
+}
+
+.deptName {
+    font-weight: bold;
+}
+
+.userContainer {
+    display: inline;
+    margin-left: 2em;
+}
+
+.user {
+    color: dimgrey;
+    display: inline-block;
+    margin-right: .5em;
+    width: 9em;
+    height: .1em;
+}
+
+.indicator {
+    width: 1.5em;
+    border: 1px solid black;
+    display: inline-block;
+
+}
+
+.indicator:after {
+    content:'';
+    display: block;
+    padding-bottom: 100%;
+}
+
+.statusForm {
+    display: inline;
+}
+
+
+.clear {
+    clear: all;
+}

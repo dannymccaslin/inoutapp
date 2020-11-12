@@ -1,5 +1,10 @@
 .App {
-  text-align: center;
+  text-align: left;
+  margin-left: 2em;
+}
+.department {
+  margin-top: 1.2em;
+  margin-bottom: 2px;
 }
 
 .App-logo {
@@ -14,18 +19,16 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  background-color: #0f4d90;
+  height: 4em;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {
   color: #61dafb;
+}
+.header-title {
+  color: #BFD633;
 }
 
 @keyframes App-logo-spin {
