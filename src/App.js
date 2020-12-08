@@ -47,16 +47,18 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <img src="./Seal.png" className="logo"/>
         <h1 className="header-title">Frederick Water In/Out Board</h1>
       </header>
       <p>When you arrive or leave, select the In or Out Radio Buttons to let others know your are either In or Out. 
         If you are in but do not wish to be disturbed, please select Do Not Disturb (DND).</p>
       <button type="submit" onClick={() => refreshPage()}>Refresh Page</button>
+      <div className="two-col-layout">
       <h2 className='department'>Engineering</h2>
       {users.map(user => {
         if (user.department === "Engineering") {
           return(
-          <UserCard key={user.id} name={user.user_name} checkd={user.status} />
+          <UserCard key={user.id} name={user.user_name} checkd={user.status} email={user.email}/>
           )
         }
       })}
@@ -64,7 +66,7 @@ function App() {
       {users.map(user => {
         if (user.department === "Customer Service") {
           return(
-          <UserCard key={user.id} name={user.user_name} checkd={user.status} />
+          <UserCard key={user.id} name={user.user_name} checkd={user.status} email={user.email}/>
           )
         }
       })}
@@ -72,15 +74,17 @@ function App() {
       {users.map(user => {
         if (user.department === "Administration") {
           return(
-          <UserCard key={user.id} name={user.user_name} checkd={user.status} />
+          <UserCard key={user.id} name={user.user_name} checkd={user.status} email={user.email}/>
           )
         }
       })}
+      </div>
+      <div className="two-col-layout">
       <h2 className='department'>Finance</h2>
       {users.map(user => {
         if (user.department === "Accounting") {
           return(
-          <UserCard key={user.id} name={user.user_name} checkd={user.status} />
+          <UserCard key={user.id} name={user.user_name} checkd={user.status} email={user.email}/>
           )
         }
       })}
@@ -88,7 +92,7 @@ function App() {
       {users.map(user => {
         if (user.department === "Maintenance") {
           return(
-          <UserCard key={user.id} name={user.user_name} checkd={user.status} />
+          <UserCard key={user.id} name={user.user_name} checkd={user.status} email={user.email}/>
           )
         }
       })}
@@ -96,10 +100,11 @@ function App() {
       {users.map(user => {
         if (user.department === "IT") {
           return(
-          <UserCard key={user.id} name={user.user_name} checkd={user.status} />
+          <UserCard key={user.id} name={user.user_name} checkd={user.status} email={user.email}/>
           )
         }
       })}
+      </div>
 
     </div>
   );

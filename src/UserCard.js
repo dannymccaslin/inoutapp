@@ -1,11 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import './style/usercard.css';
+// import ProfilePhoto from './ProfilePhoto';
 
  
 
 const UserCard = (props) => {
     let name = props.name;
     let checkd = props.checkd;
+    let email = props.email;
     let statColor = {
         in: 'green',
         out: 'red',
@@ -13,7 +15,7 @@ const UserCard = (props) => {
     }
     const [status, setStatus] = useState(checkd);
     const [color,setColor] = useState(statColor[checkd]);
-    // const [isChecked, setIsChecked] = useState(checked)
+    const options = ['in','out','dnd'];
 
     useEffect(() => {
         setStatus(checkd);
@@ -51,17 +53,27 @@ const UserCard = (props) => {
 
     return(
         <div className="userContainer">
+            {/* <ProfilePhoto email={email} /> */}
         <h3 className="user">{name}</h3>
         <div className='indicator' style={indStyle}></div>
 
         <form className='statusForm' name="statusForm" onChange={(event) => changeStatus(event)}>
-            <input type="radio" id="in" name="status" value="in"    /> 
-            <label htmlFor="in">In</label>
-            <input type="radio" id="out" name="status" value="out"  />
-            <label htmlFor="out">Out</label>
-            <input type="radio" id="dnd" name="status" value="dnd" />
-            <label htmlFor="dnd">DND</label>
+        {options.map(o => {
+            return(
+                <>
+                <input
+                    type='radio'
+                    name='status'
+                    value={o}
+                    checked={status === o}
+                />{" "}
+                {o === 'dnd' ? o.toUpperCase(): o.charAt(0).toUpperCase() + o.slice(1)  }
+                </>
+            )
+            })}
+            
         </form>
+          
         <div className="clear" />
     </div>
     )
@@ -69,3 +81,12 @@ const UserCard = (props) => {
 }
 
 export default UserCard;
+
+  
+       
+        {/* <input type="radio" id="in" name="status" value="in"    /> 
+            <label htmlFor="in">In</label>
+            <input type="radio" id="out" name="status" value="out"  />
+            <label htmlFor="out">Out</label>
+            <input type="radio" id="dnd" name="status" value="dnd" />
+            <label htmlFor="dnd">DND</label> */}
